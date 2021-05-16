@@ -1,8 +1,9 @@
 {
-  "name": "y",
+  "name": "clapping-hands-toggle",
   "version": "1.0.0",
   "description": "Toggle dark/light mode by clapping your hands",
   "main": "content.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/Alberto03/clapping-hands-toggle/issues"
   },
-  "homepage": "https://github.com/Alberto03/clapping-hands-toggle#readme"
+  "homepage": "https://github.com/Alberto03/clapping-hands-toggle#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/runtime": "^7.14.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.2",
+    "webpack": "^5.37.0"
+  }
 }

@@ -1,9 +1,5 @@
 const URL = "https://teachablemachine.withgoogle.com/models/wiGG2voLq/";
-
 const recognizer = await createModel();
-
-//alert(111);
-//console.log(1);
 
 async function createModel() {
     const checkpointURL = URL + "model.json"; // model topology
@@ -21,10 +17,6 @@ async function createModel() {
 
     return recognizer;
 }
-
-
-//console.log(2);
-
 
 //async function init() {
     
@@ -78,3 +70,5 @@ async function createModel() {
     // setTimeout(() => recognizer.stopListening(), 5000);
 
 //}
+
+export {};
