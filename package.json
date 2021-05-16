@@ -1,0 +1,19 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Toggle dark/light mode by clapping your hands",
+  "main": "content.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alberto03/clapping-hands-toggle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alberto03/clapping-hands-toggle/issues"
+  },
+  "homepage": "https://github.com/Alberto03/clapping-hands-toggle#readme"
+}

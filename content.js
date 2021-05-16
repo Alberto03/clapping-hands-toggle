@@ -1,7 +1,9 @@
 const URL = "https://teachablemachine.withgoogle.com/models/wiGG2voLq/";
 
-alert(111);
-console.log(1);
+const recognizer = await createModel();
+
+//alert(111);
+//console.log(1);
 
 async function createModel() {
     const checkpointURL = URL + "model.json"; // model topology
@@ -21,12 +23,14 @@ async function createModel() {
 }
 
 
-console.log(2);
+//console.log(2);
 
 
-async function init() {
+//async function init() {
     
-    const recognizer = await createModel();
+//    alert(11111111);
+
+//    const recognizer = await createModel();
     const classLabels = recognizer.wordLabels(); // get class labels
     /*
     const labelContainer = document.getElementById("label-container");
@@ -43,8 +47,9 @@ async function init() {
        
         const predictionIndex = scores.indexOf(Math.max(...scores)); // get the max value in the array because it represents the highest probability
         const prediction = classLabels[predictionIndex];
-        alert(prediction);
-        console.log(prediction);
+       
+       // alert(prediction);
+       // console.log(prediction);
 
         if (prediction === "Clapping") {
             if (document.body.classList.contains("tw-dark")) {
@@ -72,4 +77,4 @@ async function init() {
     // Stop the recognition in 5 seconds.
     // setTimeout(() => recognizer.stopListening(), 5000);
 
-}
+//}
