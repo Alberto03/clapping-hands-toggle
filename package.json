@@ -17,12 +17,8 @@
     "url": "https://github.com/Alberto03/clapping-hands-toggle/issues"
   },
   "homepage": "https://github.com/Alberto03/clapping-hands-toggle#readme",
-  "dependencies": {
-    "@babel/polyfill": "^7.12.1",
-    "@babel/runtime": "^7.14.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.14.2",
     "webpack": "^5.37.0"
   }
 }
