@@ -1,0 +1,20 @@
+.dark{
+    background-color: gray;
+}
+
+.light{
+    background-color: rgb(245, 239, 239);
+}
+
+.text-d{
+    color: black;
+}
+
+.text-l{
+    color: white;
+}
+
+
+.neon__text{
+    color: #c6e2ff;
+}

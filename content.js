@@ -1,28 +1,15 @@
-const URL = "https://teachablemachine.withgoogle.com/models/wiGG2voLq/";
-const recognizer = await createModel();
+//import * as tf from "@tensorflow/tfjs";
+//import * as speechCommands from "@tensorflow-models/speech-commands";
 
-async function createModel() {
-    const checkpointURL = URL + "model.json"; // model topology
-    const metadataURL = URL + "metadata.json"; // model metadata
+const URL = "https://teachablemachine.withgoogle.com/models/G_mktc4_-/"; //"https://teachablemachine.withgoogle.com/models/wiGG2voLq/";
 
-    const recognizer = speechCommands.create(
-        "BROWSER_FFT", // fourier transform type, not useful to change
-        undefined, // speech commands vocabulary feature, not useful for your models
-        checkpointURL,
-        metadataURL
-    );
+let recognitionStarted = false;
 
-    // check that model and metadata are loaded via HTTPS requests.
-    await recognizer.ensureModelLoaded();
-
-    return recognizer;
-}
-
-//async function init() {
+const startRecognition = async () => {
     
-//    alert(11111111);
+    recognitionStarted = true;
 
-//    const recognizer = await createModel();
+    const recognizer = await createModel();
     const classLabels = recognizer.wordLabels(); // get class labels
     /*
     const labelContainer = document.getElementById("label-container");
@@ -44,12 +31,17 @@ async function createModel() {
        // console.log(prediction);
 
         if (prediction === "Clapping") {
-            if (document.body.classList.contains("tw-dark")) {
-              document.body.classList.remove("tw-dark");
-              localStorage.setItem("nf-theme", "light");
+            if (document.body.classList.contains("dark")) {
+
+                document.body.classList.remove("dark");
+                document.body.classList.add("light");
+                //localStorage.setItem("nf-theme", "light");
             } else {
-              document.body.classList.add("tw-dark");
-              localStorage.setItem("nf-theme", "dark");
+
+                document.body.classList.remove("light");
+                document.body.classList.add("dark");
+
+              //localStorage.setItem("nf-theme", "dark");
             }
           }
 
@@ -63,12 +55,32 @@ async function createModel() {
         includeSpectrogram: false, // in case listen should return result.spectrogram
         probabilityThreshold: 0.75,
         invokeCallbackOnNoiseAndUnknown: true,
-        overlapFactor: 0.50 // probably want between 0.5 and 0.75. More info in README
+        overlapFactor: 0.60 // probably want between 0.5 and 0.75. More info in README
     });
 
     // Stop the recognition in 5 seconds.
     // setTimeout(() => recognizer.stopListening(), 5000);
 
-//}
+}
 
-export {};
+
+async function createModel() {
+    const checkpointURL = URL + "model.json"; // model topology
+    const metadataURL = URL + "metadata.json"; // model metadata
+
+    const recognizer = speechCommands.create(
+        "BROWSER_FFT", // fourier transform type, not useful to change
+        undefined, // speech commands vocabulary feature, not useful for your models
+        checkpointURL,
+        metadataURL
+    );
+
+    // check that model and metadata are loaded via HTTPS requests.
+    await recognizer.ensureModelLoaded();
+
+    return recognizer;
+}
+
+if (!recognitionStarted) {
+    startRecognition();
+  }

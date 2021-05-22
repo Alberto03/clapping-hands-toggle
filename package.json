@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Toggle dark/light mode by clapping your hands",
   "main": "content.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,8 +16,13 @@
     "url": "https://github.com/Alberto03/clapping-hands-toggle/issues"
   },
   "homepage": "https://github.com/Alberto03/clapping-hands-toggle#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@tensorflow-models/speech-commands": "^0.5.4",
+    "@tensorflow/tfjs": "^3.6.0",
+    "lodash": "^4.17.21"
+  },
   "devDependencies": {
-    "webpack": "^5.37.0"
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
   }
 }
