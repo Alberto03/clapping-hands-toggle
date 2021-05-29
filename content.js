@@ -28,18 +28,17 @@ const startRecognition = async () => {
         const prediction = classLabels[predictionIndex];
        
        // alert(prediction);
-       // console.log(prediction);
+       console.log(prediction, predictionIndex);
 
         if (prediction === "Clapping") {
             if (document.body.classList.contains("dark")) {
 
-                document.body.classList.remove("dark");
-                document.body.classList.add("light");
+                darkMode();
+               
                 //localStorage.setItem("nf-theme", "light");
             } else {
 
-                document.body.classList.remove("light");
-                document.body.classList.add("dark");
+                lightMode();
 
               //localStorage.setItem("nf-theme", "dark");
             }
@@ -63,6 +62,29 @@ const startRecognition = async () => {
 
 }
 
+const darkMode = () => {
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+
+    let title = document.querySelector('h1');
+    title.classList.remove('neon-title');
+    title.classList.add('light-title');
+
+    let img = document.querySelector('img');
+    img.setAttribute("src", "img/dark.jpg");
+}
+
+const lightMode = () => {
+    document.body.classList.remove("light");
+    document.body.classList.add("dark");
+
+    let title = document.querySelector('h1');
+    title.classList.remove('light-title');
+    title.classList.add('neon-title');
+
+    let img = document.querySelector('img');
+    img.setAttribute("src", "img/light.jpg");
+}
 
 async function createModel() {
     const checkpointURL = URL + "model.json"; // model topology
