@@ -24,9 +24,9 @@ const startRecognition = async () => {
 
         if (prediction === "Clapping") {
             if (document.body.classList.contains("dark")) {
-                darkMode();           
+                lightMode();           
             } else {
-                lightMode();
+                darkMode();
             }
           }
     }, 
@@ -38,26 +38,36 @@ const startRecognition = async () => {
     });
 }
 
-const darkMode = () => {
+const lightMode = () => {
     document.body.classList.remove("dark");
     document.body.classList.add("light");
 
     let title = document.querySelector('h1');
     title.classList.remove('neon-title');
-    title.classList.add('light-title');
-    document.querySelector('img').setAttribute("src", "img/light.jpg");
-   
+    title.classList.add('black-70');
+
+    let paragraph = document.querySelector('p');
+    paragraph.classList.remove('neon-title');
+    paragraph.classList.add('black-70');
+
+    document.querySelector('img').setAttribute("src", "img/light_member.jpg");
+    document.querySelector('#header-background').setAttribute("style", "background-image: url(img/light_forest.jpg);");
 }
 
-const lightMode = () => {
+const darkMode = () => {
     document.body.classList.remove("light");
     document.body.classList.add("dark");
 
     let title = document.querySelector('h1');
-    title.classList.remove('light-title');
+    title.classList.remove('black-70');
     title.classList.add('neon-title');
 
-    document.querySelector('img').setAttribute("src", "img/dark.jpg");
+    let paragraph = document.querySelector('p');
+    paragraph.classList.remove('black-70');
+    paragraph.classList.add('neon-title');
+
+    document.querySelector('img').setAttribute("src", "img/dark_member.jpg");
+    document.querySelector('#header-background').setAttribute("style", "background-image: url(img/dark_forest.jpg);");
 }
 
 async function createModel() {
