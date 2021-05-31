@@ -1,7 +1,7 @@
 # clapping-hands-toggle
 Toggle dark/light mode by clapping your hands, using a little of Machine Learning
 
-Site link : ---
+Site link : https://alberto03.github.io/clapping-hands-toggle/
 
 Side Project inspired by blog post: https://dev.to/devdevcharlie/toggle-dark-light-mode-by-clapping-your-hands-li7
 
