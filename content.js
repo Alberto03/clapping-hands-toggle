@@ -18,9 +18,6 @@ const startRecognition = async () => {
        
         const predictionIndex = scores.indexOf(Math.max(...scores)); // get the max value in the array because it represents the highest probability
         const prediction = classLabels[predictionIndex];
-       
-       // alert(prediction);
-       console.log(prediction, predictionIndex);
 
         if (prediction === "Clapping") {
             if (document.body.classList.contains("dark")) {
