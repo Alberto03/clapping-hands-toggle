@@ -1,5 +1,5 @@
 # clapping-hands-toggle
-Toggle dark/light mode by clapping your hands, using a little of Machine Learning
+Toggle dark/light mode by clapping your hands, using some Machine Learning
 
 Site link : https://alberto03.github.io/clapping-hands-toggle/
 
