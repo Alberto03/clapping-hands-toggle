@@ -1,4 +1,4 @@
-const URL = "https://teachablemachine.withgoogle.com/models/G_mktc4_-/";
+const URL = "https://teachablemachine.withgoogle.com/models/Kyv4MJAdb/";
 
 let recognitionStarted = false;
 
@@ -19,7 +19,7 @@ const startRecognition = async () => {
         const predictionIndex = scores.indexOf(Math.max(...scores)); // get the max value in the array because it represents the highest probability
         const prediction = classLabels[predictionIndex];
 
-        if (prediction === "Clapping") {
+        if (prediction === "clapping") {
             if (document.body.classList.contains("dark")) {
                 lightMode();           
             } else {
